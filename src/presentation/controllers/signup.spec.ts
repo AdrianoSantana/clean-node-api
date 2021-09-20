@@ -133,9 +133,6 @@ describe('SignUp Controller', () => {
         passwordConfirmation: 'any_password'
       }
     }
-
-    jest.spyOn(emailValidatorStub, 'isValid').mockReturnValueOnce(false)
-
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(500)
     expect(httpResponse.body).toEqual(new ServerError())
